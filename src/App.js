@@ -1,22 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import IconAkhari from "./assets/LogoAkhari.png";
 
 function App() {
+  const menus = ["About", "Features", "Pricing", "Testimonials", "Help"];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="App bg-white">
+      <header className="container max-w-5xl mx-auto flex flex-row pt-12 item-center space-x-36">
+        <img alt="icon-akhari" src={IconAkhari} className="w-36"></img>
+        <div className="flex-1">
+          <ul className="flex flex-1">
+            {menus.map((val, index) => (
+              <li key={index}>{val}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <button>Sign In</button>
+          <button>Sign Up</button>
+        </div>
       </header>
     </div>
   );
